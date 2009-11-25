@@ -8,7 +8,7 @@ our @EXPORT_OK = qw(fContent    template    safeSlurp
 
 # Writing:
 
-sub fContent { # rename
+sub makes {
     my ($f,$c) = (@_);
     open FH, ">$f";
     print FH $c;
