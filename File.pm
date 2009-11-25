@@ -25,7 +25,7 @@ sub parseTmpl {
 }
 sub slurp {
     my ($f) = (@_);
-    return (-f $f) ? slurp($f) : undef;
+    return (-f $f) ? _slurp($f) : undef;
 }
 sub _slurp {
     open FH, $_[0];
