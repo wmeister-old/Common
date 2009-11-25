@@ -4,8 +4,8 @@ use Text::Template;
 use File::Temp 'tempfile';
 use Exporter 'import';
 
-our @EXPORT_OK = qw(fContent    template    safeSlurp
-                    slurp       hSlurp      mTime);
+our @EXPORT_OK = qw(make    template    slurp
+                    hSlurp  mTime);
 
 # Writing:
 
