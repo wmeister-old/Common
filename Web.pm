@@ -24,7 +24,7 @@ sub fatalError {
     redirect("$url?error=". uri_escape($error) );
     exit 0;
 }
-sub validUploadFileName {
+sub safeFileName {
     my ($fn) = (@_);
     return 1 if $fn =~ /^[a-zA-Z0-9_\.-]+$/;
     return 0;
