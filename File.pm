@@ -4,7 +4,7 @@ use Text::Template;
 use File::Temp 'tempfile';
 use Exporter 'import';
 
-our @EXPORT_OK = qw(make    template    slurp
+our @EXPORT_OK = qw(make    parseTmpl   slurp
                     hSlurp  mTime);
 
 # Writing:
@@ -19,7 +19,7 @@ sub make {
 
 # Reading:
 
-sub template {
+sub parseTmpl {
     my ($fn,%h) = (@_);
     my $tmpl = Text::Template->new(TYPE => 'FILE', SOURCE => $fn);
     return $tmpl->fill_in(HASH => \%h);
