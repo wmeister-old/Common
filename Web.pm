@@ -4,7 +4,9 @@ use URI::Escape;
 use CGI ();
 use Exporter 'import';
 
-our @EXPORT_OK = qw/header redirect referer fatalError validUploadFileName/;
+our @EXPORT_OK = qw(header      redirect            referer
+                    fatalError  validUploadFileName);
+
 our $baseURL   = 'http://'. $ENV{SERVER_NAME};
 our $cwdURL    = $baseURL . ($ENV{REQUEST_URI} =~ m#(.*/)[^/]*#)[0];
 
