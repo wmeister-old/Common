@@ -13,8 +13,7 @@ sub make {
     my ($f,$c) = (@_);
     my ($tfh, $tfn) = tempfile();
     print $tfh $c;
-    rename($tfn, $f) or return 0;
-    return 1;
+    return rename($tfn, $f)
 }
 
 # Reading:
