@@ -3,9 +3,9 @@ use strict;
 use POSIX qw/strftime/;
 use Exporter 'import';
 
-our @EXPORT_OK = qw(prettyDate  prettyTime);
+our @EXPORT_OK = qw(curDate  curTime);
 
-sub prettyDate { return strftime("%D", localtime($_[0]) ); }
-sub prettyTime { return strftime("%r", localtime($_[0]) ); }
+sub curDate { return strftime("%D", localtime($_[0]) ); }
+sub curTime { return strftime("%r", localtime($_[0]) ); }
 
 1;
