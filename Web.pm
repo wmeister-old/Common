@@ -7,8 +7,8 @@ use Exporter 'import';
 our @EXPORT_OK = qw(header      redirect            referer
                     fatalError  safeFileName);
 
-our $baseURL   = 'http://'. $ENV{SERVER_NAME};
-our $cwdURL    = $baseURL . ($ENV{REQUEST_URI} =~ m#(.*/)[^/]*#)[0];
+our $baseURL = 'http://'. $ENV{SERVER_NAME};
+our $cwdURL  = $baseURL . ($ENV{REQUEST_URI} =~ m#(.*/)[^/]*#)[0];
 
 sub header {
     my ($type) = (@_);
