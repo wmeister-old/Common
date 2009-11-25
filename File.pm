@@ -21,14 +21,14 @@ sub make {
 
 sub template {
     my ($fn,%h) = (@_);
-    my $tmpl=Text::Template->new(TYPE => 'FILE', SOURCE => $fn);
+    my $tmpl = Text::Template->new(TYPE => 'FILE', SOURCE => $fn);
     return $tmpl->fill_in(HASH => \%h);
 }
-sub safeSlurp {
-    my ($f) = (@_);
-    return (-f $f) ? slurp($f) : '';
-}
 sub slurp {
+    my ($f) = (@_);
+    return (-f $f) ? slurp($f) : undef;
+}
+sub _slurp {
     open FH, $_[0];
     my $c = do { local $/; <FH>; };
     close FH;
