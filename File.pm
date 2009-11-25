@@ -1,6 +1,7 @@
 package Common::File;
 use strict;
 use Text::Template;
+use File::Temp 'tempfile';
 use Exporter 'import';
 
 our @EXPORT_OK = qw(fContent    template    safeSlurp
@@ -8,11 +9,12 @@ our @EXPORT_OK = qw(fContent    template    safeSlurp
 
 # Writing:
 
-sub makes {
+sub make {
     my ($f,$c) = (@_);
-    open FH, ">$f";
-    print FH $c;
-    close FH;
+    my ($tfh, $tfn) = tempfile();
+    print $tfh $c;
+    rename($tfn, $f) or return 0;
+    return 1;
 }
 
 # Reading:
