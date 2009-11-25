@@ -40,6 +40,6 @@ sub hSlurp {
 
 # Info:
 
-sub mTime { return [stat($_[0])]->[9]; }
+sub mTime { return (stat($_[0]) )[9]; }
 
 1;
